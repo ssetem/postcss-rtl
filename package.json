@@ -1,6 +1,6 @@
 {
   "name": "@zohodesk/postcss-rtl",
-  "version": "1.5.1",
+  "version": "1.5.2",
 	"private": false,
   "description": "PostCSS plugin for RTL-optimizations",
   "keywords": [
