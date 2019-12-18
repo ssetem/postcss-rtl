@@ -161,7 +161,12 @@ module.exports = postcss.plugin('postcss-rtl', options => (css) => {
       const ltrDirRule = getDirRule(rule, 'ltr', options);
       ltrDecls.forEach((_decl) => {
         _decl.cleanRaws(_decl.root() === ltrDirRule.root());
-        rule.removeChild(_decl);
+        try {
+          rule.removeChild(_decl);
+        } catch (e){
+          console.log(rule, _decl)
+        }
+        
         if (!options.onlyDirection || options.onlyDirection === 'ltr') {
           ltrDirRule.append(_decl);
         }
